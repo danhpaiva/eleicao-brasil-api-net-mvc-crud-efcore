@@ -9,6 +9,7 @@ namespace EleicaoBrasilApi.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
+        public string ViceNome { get; set; } = string.Empty; // Novo Campo
         public string Partido { get; set; } = string.Empty;
         public int Numero { get; set; }
     }
