@@ -6,11 +6,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("EleicoesDb"));
 builder.Services.AddControllers();
 
-builder.Services.AddOpenApi();
+// 1. Adicione estas duas linhas abaixo:
+builder.Services.AddEndpointsApiExplorer(); // Necessário para encontrar os endpoints
+builder.Services.AddSwaggerGen();            // REGISTRA O SERVIÇO QUE ESTÁ FALTANDO
+
+builder.Services.AddOpenApi(); // Isso é para o Scalar/OpenApi (opcional se usar Swagger)
 
 var app = builder.Build();
 
-// Habilita o Swagger independente do ambiente para os alunos testarem
+// Habilita o Swagger independente do ambiente para vcs testarem
 app.UseSwagger();
 app.UseSwaggerUI();
 
