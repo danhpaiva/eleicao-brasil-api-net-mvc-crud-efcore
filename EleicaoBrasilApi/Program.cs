@@ -30,3 +30,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+//Daniel Paiva - Exemplo de API RESTful para Eleições no Brasil usando .NET 10, Entity Framework Core e In-Memory Database.
